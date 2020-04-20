@@ -1,0 +1,16 @@
+#conta = eval(input('Digite algo a ser executado: '))
+#print(conta)
+algo = input('digite algo: ')
+print('O tipo primitivo dessa variável é {}'.format(type(algo)))
+print ('É alfabético?', algo.isalpha())
+print('É somente Espaços?',algo.isspace())
+print('É Numérico?', algo.isnumeric())
+print('É alfanumérico?', algo.isalnum())
+print('É decimal?', algo.isdecimal())
+print('É algo imprimível?',algo.isprintable())
+print('É algo Decimal? ',algo.isdecimal())
+print('É algo em caixa alta?',algo.isupper())
+print('Esta apenas em letras minúsculas?', algo.islower())
+print('Está capitalizada?',algo.istitle())
+
+
