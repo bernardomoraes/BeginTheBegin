@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Curso Java Script</title>  
+  </head>
+  <body>
+    <h1> Meu código </h1>
+    <h2>1º Exercício</h2>
+    <p>Retornar o seguinte conteúdo:</p>
+    <p>
+      O usuário mora em São Paulo / SP, no bairro Centro, na rua "Rua dos Pinheiros" com nº 1293.
+    </p>
+    <!-- A ultima coisa que a gente adiciona no body é o script pq ele usa as coisas quem vem antes e dessa forma elas carregariam 1 -->
+    <script>
+      // Exercício 1
+      console.log('Exercício 1')
+      var endereço = {
+        rua: 'Rua dos Pinheiros',
+        numero: 1293,
+        bairro: 'Centro',
+        cidade: 'São Paulo',
+        uf: 'SP'
+      };
+      console.log('O usuário mora em', endereço.cidade,"/",endereço.uf,', no bairro', endereço.bairro, 'na rua "', endereço.rua, "' de nº", endereço.numero,'.')
+      
+//-------------------------------------------------------------------------
+      // Exercício 2
+      console.log('\nExercício 2')
+      function pares (x, y) {
+      while (x<=y){
+        if (x % 2 == 0){
+            console.log(x)
+            x++
+          } else {
+            x++
+          }
+        }
+      }
+      pares (0,10);
+
+//-------------------------------------------------------------------------
+// Exercício 3
+      console.log('\nExercício 3')
+      function temHabilidade(hab) {
+        var teste = hab.indexOf('JavaScript');
+        if (teste > -1){
+          return true;
+        } else {
+          return false;
+        }
+      }
+      var skills = ['JavaScript', 'ReactJS', 'React Native'];
+      console.log(temHabilidade(skills))
+//-------------------------------------------------------------------------
+// Exercício 3 (2ª Versão)
+console.log('\nExercício 3.2' + '\n')
+      function temHabilidade2(hab) {
+        return hab.indexOf('JavaScript') !== -1;
+      }
+      var skills = ['JavaScript', 'ReactJS', 'React Native'];
+      console.log(temHabilidade2(skills));
+//-------------------------------------------------------------------------
+// Exercício 4
+      console.log('\nExercício 4')
+      function experiencia(anos) {
+        if (0 <= anos && anos <=1) {
+          return 'Iniciante';
+        } else if (1 < anos && anos <= 3 ) {
+          return 'Intermediário';
+        } else if (3< anos && anos <7) {
+          return 'Avançado';
+        } else if (anos >=7) {
+          return 'Jedi Master';
+        } else {
+          return 'Esse não é um valor válido';
+        }
+      }
+      var anosEstudo = 7;
+      console.log(experiencia(anosEstudo));
+//-------------------------------------------------------------------------
+// Exercício 5
+/*       
+      console.log('\nExercício 5')
+      var usuarios = [
+        {
+          nome: 'Diego',
+          habilidades: ['Javascript', 'ReactJS', 'Redux']
+        },
+        {
+          nome: 'Gabriel',
+          habilidades: ['VueJS', 'Rubt on Rails', 'Elixir']
+        }
+      ];
+      function description (obj, nomedoobj) {
+        var txt = "";
+        for (var i in obj) {
+          if (usuarios.nome(i)) {
+            txt += nome + "." + i + " = " + usuarios[i] + "\n";
+          }
+        } 
+        return txt;
+      }
+      //description()
+      console.log(description (usuarios)) */
+
+
+      function exibeHabilidades(usuarios) {
+        for (x of usuarios) {
+        document.write(
+            "O " + x.nome + " possui as habilidades: " +
+              x.habilidades.join(", ")
+          );
+        }
+      }
+
+      var usuarios = [
+        {
+          nome: "Diego",
+          habilidades: ["Javascript", "ReactJS", "Redux"]
+        },
+        {
+          nome: "Gabriel",
+          habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+        }
+      ];
+        
+      exibeHabilidades(usuarios);
+
+    </script>
+  </body>
+</html>
