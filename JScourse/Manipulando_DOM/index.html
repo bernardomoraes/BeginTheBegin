@@ -1,19 +1,68 @@
 <!DOCTYPE html>
-<html lang="br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manipulando DOM, Curso JS</title>
-</head>
-<body>
-  <!-- A dom é uma arvore de elementos no HTML, é composta por todos os elementos dispostos em tela. Basicamente é tudo que o JS vai controlar -->
-  <div id="app">
-    <input onkeypress="mostraalerta()"> Me pressione </input>
-  </div>
-  <script>
-    function mostraalerta() {
-      alert( 'Botão foi clicado');
-    }
-  </script>
-</body>
+  <head>
+    <title>Manipulando DOM, Curso JS</title>
+  </head>
+
+  <body>
+    <!-- A dom é uma arvore de elementos no HTML, é composta por todos os
+    elementos dispostos em tela. Basicamente é tudo que o JS vai controlar -->
+    <div id="app">
+      <input type="text" name="nome" id="nome" class="nome" />
+      <button class="botao">Adicionar</button>  
+    </div>
+    
+    <div class="box"></div>
+
+    <script>
+      var inputElement = document.getElementById("nome");
+      var inputElementTag = document.getElementsByTagName("input");
+      var inputElementClass = document.getElementsByClassName("nome");
+
+      console.log(inputElement);
+      console.log(inputElementTag);
+      console.log(inputElementClass);
+
+      var inputElementQuerySelect = document.querySelector("div#app input");
+      /* O querySelector ele seleciona apenas o primeiro elemento (caso
+    utilizado apenas com 'input' podemos também utilizar o
+    [nome=nomedonome] para poder especificar um input especifico. ) */
+      var inputElementQuerySelectAll = document.querySelectorAll("input");
+
+      console.log(inputElementQuerySelect);
+
+      var btnElement = document.querySelector("button.botao");
+      btnElement.onclick = function () {
+        var text = inputElementQuerySelect.value;
+        alert(text);
+      };
+      /* Fim da Primeira Aula */
+      var linkElement = document.createElement("a");
+      linkElement.setAttribute("href", "https://facebook.com.br");
+      linkElement.setAttribute("target", "_blanc")
+      /* Nessa primeira variável ele vai criar o <a href = 'link'></a> */
+      var textElement = document.createTextNode("Acessar Facebook");
+      linkElement.appendChild(textElement);
+      /* Essa segunda variável cria o texto que vai aparecer no DOM */
+      /* Tudo isso foi criado mas ainda não foi jogado no body */
+      var divisorElement = document.createElement('p');
+
+      var containerElement = document.querySelector('#app')
+      containerElement.appendChild(divisorElement)
+      containerElement.appendChild(linkElement)
+      /* Fim da aula 3 */
+
+/*    var boxElement = document.createElement('div');
+      boxElement.setAttribute('class', 'box' );
+      boxElement.setAttribute('width','100');
+      boxElement.setAttribute('height', '100'); */
+      var boxElement = querySelector('.box')
+
+      boxElement.style.width = 100; /* Note que não precisamos colocar o px */
+      boxElement.style.height = 200; /* Note que não precisamos colocar o px */
+      boxElement.style.backgroundColor = '#f00'; /* Note que não precisamos colocar o -
+      para isso colocamos o 'C' maiúsculo  */
+
+
+    </script>
+  </body>
 </html>
