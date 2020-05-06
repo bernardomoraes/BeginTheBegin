@@ -1,0 +1,29 @@
+<html lang="pt-br">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="first">
+      <button class="create" id="botao">Criar Um Quadrado Vermelho</button>
+    </div>
+    <script>
+      var buttonSelect = document.getElementById('botao')
+      var bodySelect = document.querySelector('body')
+      buttonSelect.onclick = function createButton() {  
+        var aux = document.createElement('div');
+          aux.style.width = 100;
+          aux.style.height = 100;
+          aux.style.backgroundColor = '#f00';
+/*        aux.setAttribute('height', '100')
+          aux.setAttribute('width', '100')
+          aux.setAttribute('backgroundColor', '#f00') 
+          isso não deu certo, somente o de cima, pois esse setava Um
+          atributo e não fazia o style, creio eu*/
+          bodySelect.append(document.createElement('p'))
+          bodySelect.append(aux)
+        
+      }
+      
+    </script>
+  </body>
+</html>

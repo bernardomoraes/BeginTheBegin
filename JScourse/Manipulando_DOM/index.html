@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
   <head>
     <title>Manipulando DOM, Curso JS</title>
   </head>
@@ -10,8 +10,8 @@
       <input type="text" name="nome" id="nome" class="nome" />
       <button class="botao">Adicionar</button>  
     </div>
-    
     <div class="box"></div>
+    
 
     <script>
       var inputElement = document.getElementById("nome");
@@ -55,14 +55,12 @@
       boxElement.setAttribute('class', 'box' );
       boxElement.setAttribute('width','100');
       boxElement.setAttribute('height', '100'); */
-      var boxElement = querySelector('.box')
+      var boxElement = document.querySelector('.box')
 
-      boxElement.style.width = 100; /* Note que não precisamos colocar o px */
-      boxElement.style.height = 200; /* Note que não precisamos colocar o px */
+      boxElement.style.width = 50; /* Note que não precisamos colocar o px */
+      boxElement.style.height = 50; /* Note que não precisamos colocar o px */
       boxElement.style.backgroundColor = '#f00'; /* Note que não precisamos colocar o -
       para isso colocamos o 'C' maiúsculo  */
-
-
     </script>
   </body>
 </html>

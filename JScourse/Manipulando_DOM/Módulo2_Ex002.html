@@ -1,0 +1,66 @@
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="first">
+      <button class="create" id="botao" onclick="createButton()">Criar Um Quadrado Preto</button>
+
+      <button onclick="changeColor()"> Mudar A cor de todos os Quadrados</button>
+
+      <input id="inputcolor" onkeypress=""><button id="btnnewcolor" onclick="setColor()"> Cor Desejada (Em Inglês)</button></input>
+
+      <div id="sector"></div>
+
+    </div>
+
+    <script>
+      var buttonSelect = document.getElementById("botao");
+      var sectorSelect = document.getElementById('sector')
+      var quadradoSelect = document.getElementsByClassName('Quadrado')
+      var inputcolorSelect = document.getElementById('inputcolor')
+      var btnnewcolorSelect = document.getElementById('btnnewcolor')
+      
+      function createButton() {
+        var aux = document.createElement("div");
+        aux.style.width = 100;
+        aux.style.height = 100;
+        aux.style.backgroundColor = "black";
+        aux.setAttribute("class", "Quadrado");
+        aux.onmouseover = function () {
+          aux.style.background = getRandomColor ();
+        }
+        sectorSelect.appendChild(document.createElement('p'))
+        sectorSelect.appendChild(aux)
+      }
+      
+      function Listeners () {
+        console.log(quadradoSelect)
+      }
+
+      function changeColor () {
+        for (let index = 0; index < quadradoSelect.length; index++) {
+          quadradoSelect[index].style.backgroundColor = getRandomColor();
+        }
+      }
+
+        function getRandomColor() {
+          var letters = "0123456789ABCDEF";
+          var color = "#";
+          for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+          }
+          return color;
+        }
+
+        btnnewcolorSelect.onclick = function setColor () {
+          var color = inputcolorSelect.value;
+          for (let index = 0; index < quadradoSelect.length; index++) {
+          quadradoSelect[index].style.backgroundColor = color;
+          }
+        }
+    </script>
+  </body>
+</html>
