@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Exercício 04</title>
+  </head>
+  <body>
+    <input type="text" name="nome" />
+    <button onClick="add()">Adicionar</button>
+
+    <script>
+      var input = document.getElementsByName("nome");
+
+      /* function addElement() {
+        // create a new div element
+        var newDiv = document.createElement("div");
+        // and give it some content
+        var newContent = document.createTextNode('Hello World');
+        // add the text node to the newly created div
+        newDiv.appendChild(newContent);
+        // add the newly created element and its content into the DOM
+        document.body.insertBefore(newDiv, null);
+      } */
+
+      function add() {
+        var text = input[input.length - 1].value; //Aqui ele vai sempre selecionar o último imput e copiar o valor nessa variável.
+        
+        var newP = document.createElement("div");
+        var newContent = document.createTextNode(text);
+        newP.appendChild(newContent)
+
+        document.body.insertBefore(newP, null)
+        
+        input[input.length - 1].value = null
+
+      }
+    </script>
+  </body>
+</html>

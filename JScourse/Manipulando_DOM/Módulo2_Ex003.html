@@ -1,0 +1,61 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Módulo 2 Exercício 3</title>
+</head>
+<body>
+  <button onclick="criarLista()">Criar Lista de Nomes</button>
+  <button onclick="zerarCount(), deletarLista()" id="showCount">Contador Atual de Cliques: </button>
+  
+  <script>
+  /* Variáveis */
+      var nomes = ["Diego", "Gabriel", "Lucas"];
+      var body = document.querySelector('body')
+      var list = document.createElement('ul')
+      var count = 0
+      var btnCountShow = document.querySelector('#showCount')
+      var text = btnCountShow.textContent
+      showCount()
+
+  /* Funções */
+
+    function criarLista() {
+      body.appendChild(list)
+      console.log(count)
+      var auxi = document.createElement('div')
+      auxi.textContent = count
+      list.appendChild(auxi)
+      // list.appendChild(aux).textContent = count => Não funciona
+      // list.appendChild(document.createElement('li').textContent = count) => Não funciona
+      for (let index = 0; index < nomes.length; index++) {
+        console.log(nomes[index])
+        aux = document.createElement('li')
+        aux.textContent = nomes[index]
+        list.appendChild(aux)
+      }
+      count ++
+      showCount()      
+    }
+
+    function showCount () {
+      var addText = (text + count)
+      btnCountShow.textContent = addText
+    }
+
+    function zerarCount () {
+      count = 0
+      showCount()
+    }
+  
+    function deletarLista () {
+      list.remove() 
+      //Isso faz sumir mas volta depois, de onde parou kkkk
+      // ainda não resolvi esse problema, procurar depois!
+      // location.reload() => Gambiarra, porém não executa códigos depois dela, então o contador
+      // não fica zerado, porém para corrigir isso eu poderia já colocar no inicio do script uma 
+      // showCount() para zerar o contador e não esperar a pessoa clicar apra mostrar.
+      // Usar isso também é ruim pois ia ter que recarregar a página e isso perde performance.
+    }
+  </script>
+</body>
+</html>

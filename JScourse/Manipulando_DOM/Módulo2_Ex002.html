@@ -32,8 +32,8 @@
         aux.onmouseover = function () {
           aux.style.background = getRandomColor ();
         }
-        sectorSelect.appendChild(document.createElement('p'))
-        sectorSelect.appendChild(aux)
+        sectorSelect.append(document.createElement('p'))
+        sectorSelect.appendChild(aux) // ? append e appendChild ?
       }
       
       function Listeners () {
